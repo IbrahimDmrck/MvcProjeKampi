@@ -12,8 +12,8 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class WriterRepository : IWriterDal
     {
-        Context context = new Context();
-        DbSet<Writer> _object;
+        readonly Context context = new Context();
+        readonly DbSet<Writer> _object;
 
         public void Delete(Writer p)
         {

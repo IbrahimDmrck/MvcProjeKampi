@@ -12,8 +12,8 @@ namespace DataAccessLayer.Concrete.Repositories
 {
     public class CategoryRepository : ICategoryDal
     {
-        Context context = new Context();
-        DbSet<Category> _object;
+        readonly Context context = new Context();
+        readonly DbSet<Category> _object;
 
         public void Delete(Category p)
         {
