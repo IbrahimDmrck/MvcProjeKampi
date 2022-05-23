@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concrete.Admin
+@{
+    ViewBag.Title = "AddAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("AddAdmin", "Authorization", FormMethod.Post))
+{
+
+    @Html.Label("Admin Kullanıcı Adı :")
+    @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.CategoryName, "", new { @style = "color:red;" })*@
+
+    <br />
+    <br />
+    @Html.Label("Şifreyi Yazınız")
+    @Html.TextAreaFor(x => x.AdminPassword, new { @class = "form-control" })
+    @*@Html.ValidationMessageFor(x => x.CategoryDescription, "", new { @style = "color:red;" })*@
+    <br />
+    @Html.Label("Rol Seçin")
+    @Html.TextAreaFor(x => x.AdminRole, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-outline-success">Kaydet</button>
+
+}
+
+

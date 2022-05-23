@@ -18,7 +18,7 @@ namespace MvcProjeKampi.Controllers
         public ActionResult Index()
         {
            
-
+            
             var ctgCount = context.Categories.Count();
             var headSoftWare = context.Headings.Where(x => x.Category.CategoryName == "Yazılm").Count();
             var writerName = context.Writers.Where(x => x.WriterName.Contains("a")).Count();

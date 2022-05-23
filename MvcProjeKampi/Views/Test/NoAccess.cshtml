@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Daily UI#011 | Flash Message (Error/Success)</title>
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/error/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body onload="ornek()">
+
+    <script>function ornek(){
+   document.getElementById("AnaKapsayici").style.transform = "translateY(150px)";
+    }</script>
+
+    <div id="AnaKapsayici">
+        <p class="messageText"> Geçersiz Kullanıcı Adı yada Şifre Girdiniz !</p>
+        <p class="messageText"> Lütfen Bilgilerinizi Kontrol Ediniz .</p>
+       
+        <a role="button" href="/Login/WriterLogin/">Geri Dön</a>
+    </div>
+
+
+
+</body>
+</html>

@@ -8,8 +8,8 @@
 {
 
 <div class="form-group">
-    @Html.Label("kategori ID :")
-    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+   
+    @Html.HiddenFor(x => x.CategoryID, new { @class = "form-control"  })
     <br />
     @Html.Label("kategori Adı :")
     @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })

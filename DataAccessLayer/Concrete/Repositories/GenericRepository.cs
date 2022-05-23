@@ -21,7 +21,8 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Delete(T p)
         {
-            _object.Remove(p);
+            var deletedntity = context.Entry(p);
+            deletedntity.State = EntityState.Deleted;
             context.SaveChanges();
         }
 
@@ -32,8 +33,11 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public void Insert(T p)
         {
-            _object.Add(p);
+            var addedEntity = context.Entry(p);
+            addedEntity.State = EntityState.Added;
             context.SaveChanges();
+
+            //_object.Add(p);
         }
 
         public List<T> List()
@@ -43,13 +47,15 @@ namespace DataAccessLayer.Concrete.Repositories
 
         public List<T> List(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
+            return _object.Where(filter).ToList();
         }
 
         public void Update(T p)
         {
-           
+            var updatedEntity = context.Entry(p);
+            updatedEntity.State = EntityState.Modified;
             context.SaveChanges();
+
         }
     }
 }

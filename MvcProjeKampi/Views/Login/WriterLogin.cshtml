@@ -1,0 +1,209 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Giriş Yap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/login-form-20/css/style.css">
+
+
+</head>
+<body class="img js-fullheight" style="background-image: url(/AdminLTE-3.0.4/login-form-20/images/bg.jpg);">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h2 class="heading-section">Hoşgeldiniz</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+                        <h3 class="mb-4 text-center">Bir Hesabın Var Mı ?</h3>
+                        @using (Html.BeginForm("WriterLogin", "Login", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="WriterEmail" placeholder="E-mail" required>
+                            </div>
+                            <div class="form-group">
+                                <input id="password-field" type="password" name="writerPassword" class="form-control" placeholder="Şifre" required>
+                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" id="Login" class="form-control btn btn-primary submit px-3">Giriş Yap</button><br /><br />
+                                <a href="/Login/Index/" class="btn btn-dark text-white">Yönetici</a>
+                            </div>
+                            <div class="form-group d-md-flex">
+                                <div class="w-50">
+                                    <label class="checkbox-wrap checkbox-primary">
+                                        Beni Hatırla
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                                <div class="w-50 text-md-right">
+                                    <a href="#" style="color: #fff">Şifremi Unuttum</a>
+                                </div>
+                            </div>
+                        }
+                        <p class="w-100 text-center">&mdash; Bununla Oturum Aç &mdash;</p>
+                        <div class="social d-flex text-center">
+                            <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+                            <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @*<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="sweetalert2.all.min.js"></script>*@
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/jquery.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/popper.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/bootstrap.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/login-form-20/js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+    <title>Login V4</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--===============================================================================================-->
+<!--<link rel="icon" type="image/png" href="~/AdminLTE-3.0.4/Login_v4/images/icons/favicon.ico" />-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/bootstrap/css/bootstrap.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/fonts/font-awesome-4.7.0/css/font-awesome.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/fonts/iconic/css/material-design-iconic-font.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/animate/animate.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/css-hamburgers/hamburgers.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/animsition/css/animsition.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/select2/select2.min.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/vendor/daterangepicker/daterangepicker.css">-->
+<!--===============================================================================================-->
+<!--<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/css/util.css">
+<link rel="stylesheet" type="text/css" href="~/AdminLTE-3.0.4/Login_v4/css/main.css">-->
+<!--===============================================================================================-->
+<!--</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('/AdminLTE-3.0.4/Login_v4/images/bg-01.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-50 p-t-50 p-b-45">
+                @using (Html.BeginForm("WriterLogin","Login",FormMethod.Post))
+                {
+                    <span class="login100-form-title p-b-37">
+                        Hoşgeldiniz
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Geçeli bir E-mail girin">
+                        <span class="label-input100">E-MAİL</span>
+                        <input class="input100 " type="text" name="WriterEmail" placeholder="Kullanıcı e-mail girin">
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Şifrenizi giriniz">
+                        <span class="label-input100">ŞİFRE</span>
+                        <input class="input100" type="password" name="writerPassword" placeholder="Şifrenizi girin">
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+                    <div class="validate-input">
+                        <span class="label-input100">Beni Hatırla <input class="" type="checkbox" name="pass"></span>
+                    </div>
+
+                    <div class="text-right p-t-8 p-b-31">
+                        <a href="#">
+                            Şifreni mi unuttun ?
+                        </a>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn ">
+                                Giriş Yap
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="txt1 text-center p-t-10 p-b-10">
+
+                    </div>
+
+                    <div class="flex-c-m">
+                        <a href="#" class="login100-social-item bg1">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="login100-social-item bg2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+
+                        <a href="#" class="login100-social-item bg3">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex-col-c p-t-38">
+                        <span class="txt1 p-b-17">
+                            Giriş Yap yada Kayıt Ol !
+                        </span>
+
+                        <a href="#" class="txt2">
+                            Kayıt Ol
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dropDownSelect1"></div>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/jquery/jquery-3.2.1.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/animsition/js/animsition.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/bootstrap/js/popper.js"></script>
+<script src="~/AdminLTE-3.0.4/Login_v4/vendor/bootstrap/js/bootstrap.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/select2/select2.min.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/daterangepicker/moment.min.js"></script>
+<script src="~/AdminLTE-3.0.4/Login_v4/vendor/daterangepicker/daterangepicker.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/vendor/countdowntime/countdowntime.js"></script>-->
+<!--===============================================================================================-->
+<!--<script src="~/AdminLTE-3.0.4/Login_v4/js/main.js"></script>
+
+</body>
+</html>-->
