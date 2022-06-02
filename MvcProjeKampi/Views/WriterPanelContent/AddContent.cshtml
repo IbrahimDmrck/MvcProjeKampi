@@ -3,16 +3,92 @@
     ViewBag.Title = "AddContent";
     Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
-<br />
-@using (Html.BeginForm("AddContent", "WriterPanelContent", FormMethod.Post))
-{
-<div class="card-body form-group">
-    <input hidden type="text" name="HeadingID" value="@ViewBag.d" />
-    @Html.Label("İçeriğinizi Yazın")
-        @Html.TextAreaFor(x => x.ContentValue, 4, 30, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ContentValue, "", new { @style = "color:red" })
+@*<br />
+    <div style="width:1250px;border:1px solid red;">
+        @using (Html.BeginForm("AddContent", "WriterPanelContent", FormMethod.Post))
+        {
+            <div class="card-body form-group">
+                <input hidden type="text" name="HeadingID" value="@ViewBag.d" />
+                @Html.Label("İçeriğinizi Yazın")
+                @Html.TextAreaFor(x => x.ContentValue, 4, 30, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.ContentValue, "", new { @style = "color:red" })
+                <br />
+                <button class="btn btn-dark">Yazı Ekle</button>
+            </div>
+        }
+    </div>*@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AdminLTE 3 | Compose Message</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <!-- Theme style -->
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.css">
+
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote.min.js"></script>
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <script language="javascript">
+        function Onay() {
+             confirm("Taslağı Kayıt Etmek İstiyor Musunuz?")
+            }
+    </script>
+</head>
+<body class="hold-transition sidebar-mini">
     <br />
-    <button class="btn btn-dark">Yazı Ekle</button>
-</div>
-}
+    <!-- /.col -->
+    <div class="col-md-12" style="margin:0px auto;">
+        <div class="card card-primary card-outline bg-dark">
+            <div class="card-header">
+                <h3 class="card-title">Başlığa yaz</h3>
+            </div>
+            @using (Html.BeginForm("AddContent", "WriterPanelContent", FormMethod.Post))
+            {
+                <div class="card-body">
+                    <div class="form-group">
+                        @* <textarea id="compose-textarea" class="form-control" style="height: 300px" name="ContentValue"></textarea>*@
+
+                        <input hidden type="text" name="HeadingID" value="@ViewBag.d" />
+                        @Html.Label("İçeriğinizi Yazın")
+                        @Html.TextAreaFor(x => x.ContentValue, 5, 30, new { @class = "form-control bg-gray-light", @id = "compose-textarea" })
+                        @Html.ValidationMessageFor(x => x.ContentValue, "", new { @style = "color:red" })
+                       
+
+                    </div>
+               
+                </div>
+                <div class="card-footer">
+                    <div class="float-right">
+                        <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                    </div>
+                    <button type="reset" class="btn btn-default"><i class="fas fa-times"></i> İptal et</button>
+                </div>
+            }
+        </div>
+        <!-- /.card -->
+    </div>
+
+    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <!-- Summernote -->
+    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(function () {
+            //Add text editor
+            $('#compose-textarea').summernote()
+        })</script>
+</body>
+</html>
 
